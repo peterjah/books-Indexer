@@ -1,4 +1,4 @@
-export const createBookContent = (nbWords: number = 1000): string => {
+export const createBookContent = (nbWords: number = 10000): string => {
   let n = 0;
   let content: string = "";
   while (n < nbWords) {

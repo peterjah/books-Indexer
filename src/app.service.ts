@@ -1,6 +1,6 @@
 import { Injectable } from "@nestjs/common";
 
-export const DEFAULT_PAGE_SIZE: number = 10;
+export const DEFAULT_PAGE_SIZE: number = 1000;
 
 @Injectable()
 export class AppService {
