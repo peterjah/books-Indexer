@@ -26,17 +26,10 @@ export class AppController {
     @Param("title") title: BookTitle,
     @Query("fromPage") fromPage: string
   ): string {
-    console.log("title", title);
-    console.log("fromPage", fromPage);
-    console.log("fromPage", parseInt(fromPage));
     const content = this.appService.getBookByTitle(title);
     if (!content) {
       throw new NotFoundException();
     }
-
-    const paginated = this.appService.toPagination(content, fromPage)
-    console.log("paginated content leng",paginated.length, paginated.join(" "))
-
     return this.appService.toPagination(content, fromPage).join(" ");
   }
 
