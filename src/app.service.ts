@@ -13,7 +13,9 @@ export class AppService {
     // basic by-word indexation
     for (let word of words) {
       if (this.booksByWords[word]) {
-        this.booksByWords[word].push(title);
+        if(!this.booksByWords[word].includes(title)) {
+          this.booksByWords[word].push(title);
+        }
       } else {
         this.booksByWords[word] = [title];
       }
